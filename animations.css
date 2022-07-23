@@ -1,0 +1,47 @@
+.light {
+    --grad-1: #00aeff;
+    --grad-2: #00ffdd;
+    --grad-3: #00ff55;
+    --grad-4: #fffb00;
+    --grad-5: #00aeff;
+    --hue-logo: 0deg;
+}
+.dark {
+    --grad-1: #ae00ff;
+    --grad-2: #00aeff;
+    --grad-3: #ffe600;
+    --grad-4: #ff6600;
+    --grad-5: #ae00ff;
+    --hue-logo: 74deg;
+}
+@media (min-width: 1200px) {
+    :root{
+        --main-text: 150px;
+    }
+}
+
+
+.anim-text{
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,var(--grad-1) 0%,var(--grad-2) 29%,var(--grad-3) 67%,var(--grad-4) 85%, var(--grad-5) 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2.5s linear infinite;
+    display: inline-block;
+    font-size: var(--main-text);
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.logo-color {
+    filter: hue-rotate(var(--hue-logo));
+}
