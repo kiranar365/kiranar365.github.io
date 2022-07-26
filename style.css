@@ -1,3 +1,10 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+  letter-spacing: 0.04em;
+}
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -10,12 +17,36 @@ a {
 a:hover, a:focus {
     color: var(--link-text);
 }
+h1 {
+    font-size: 72pt;
+}
+h2 {
+    font-size: 48pt;
+}
+h3 {
+    font-size: 36pt;
+}
+h4 {
+    font-size: 26pt;
+}
+h5 {
+    font-size: 22pt;
+}
+h6 {
+    font-size: 18pt;
+}
+p {
+    font-size: 16pt;
+}
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--text-color);
+}
 
 
 .nav {
     overflow: hidden;
     background-color: var(--nav-bg);
-    transition: opacity 1000ms ease-in-out, color 500ms ease-in-out, background 1000ms ease-in-out;
+    transition: opacity 500ms ease-in-out, color 1s ease-in-out, background 1000ms ease-in-out, background 500ms ease-in-out;
     backdrop-filter: blur(10px);
 }
 .nav a {
@@ -41,31 +72,9 @@ a:hover, a:focus {
 .nav .icon {
     display: none;
 }
-  
-@media screen and (max-width: 600px) {
-    .nav a:not(:first-child) {display: none;}
-    .nav a.icon {
-      float: right;
-      display: block;
-    }
-}
 .resp-text {
     position: absolute;
     opacity: 0;
-}
-@media screen and (max-width: 600px) {
-    .nav.responsive {position: relative;}
-    .nav.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .nav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-      color: var(--text-color);
-    }
 }
 .right {
     float: right;
@@ -80,16 +89,53 @@ a:hover, a:focus {
     padding: 0;
     align-items: center;
     justify-content: center;
+    transition: background 500ms ease-in-out;
 }
 
 .page {
     width: 90%;
-    height: 88vh;
-    background-color: var(--bg-page);
+    height: 100%;
+    background: var(--bg-page);
     border: var(--accent) 2px solid;
     border-radius: 5px;
+    text-align: center;
+    color: var(--text-color);
     backdrop-filter: blur(10px);
 }
+
+
+.section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bg1 {
+    background-color: #ccc;
+}
+.bg2 {
+    background-color: #333;
+}
+.revealUp {
+    opacity: 0;
+    visibility: hidden;
+}
+.spacer {
+    height: 50vh;
+    background-color: #000;
+}
+
+
+
+
+
+
+
 
 
 
