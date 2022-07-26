@@ -5,10 +5,15 @@
   position: relative;
   letter-spacing: 0.04em;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: local var(--body-img) no-repeat center var(--body-bg);
+    background: var(--body-img) no-repeat top center var(--body-bg);
+    background-attachment: scroll;
+    background-size: cover;
     transition: background 500ms ease-in-out, background-color 500ms ease-in-out, color 1000ms ease-in-out, opacity 1000ms ease-in-out;
 }
 a {
@@ -93,6 +98,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .page {
+    margin: 0;
+    padding: 0;
     width: 90%;
     height: 100%;
     background: var(--bg-page);
@@ -102,32 +109,30 @@ h1, h2, h3, h4, h5, h6, p {
     color: var(--text-color);
     backdrop-filter: blur(10px);
 }
-
-
-.section {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    padding: 0;
-    text-align: center;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.animated-text {
+    background-image: linear-gradient(225deg, var(--grad1), var(--grad2), var(--grad3), var(--grad4), var(--grad5));
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textanim 2s linear infinite;
+    display: inline-block;
+  
 }
-.bg1 {
-    background-color: #ccc;
+@keyframes textanim {
+    to {
+        background-position: 200% center;
+    }
 }
-.bg2 {
-    background-color: #333;
-}
-.revealUp {
-    opacity: 0;
-    visibility: hidden;
-}
-.spacer {
-    height: 50vh;
-    background-color: #000;
+.glow {
+    color: var(--text-color);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 
@@ -135,14 +140,38 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 
+::-moz-selection {
+    color: var(--accent);
+    background: var(--accent-025);
+}
+::selection {
+    color: var(--accent);
+    background: var(--accent-025);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #808080;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 5px;
+}
 
-
-
-
-
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+  
 .light {
     --nav-bg: #cecece80;
     --accent: #00aeff;
+    --accent-025: #00aeff3d;
     --link-text: #00aeff;
     --nav-link-hover: #49c5ff;
     --nav-link-hover-05: #49c5ff80;
@@ -152,10 +181,16 @@ h1, h2, h3, h4, h5, h6, p {
     --theme-icon-light: 1;
     --bg-page: #dddddd80;
     --body-img: url('/assets/img/light.jpg');
+    --grad1: #00aeff;
+    --grad2: #00ffbf;
+    --grad3: #ffe600;
+    --grad4: #00ffbf;
+    --grad5: #00aeff;
 }
 .dark {
     --nav-bg: #00000080;
     --accent: #ae00ff;
+    --accent-025: #ae00ff3d;
     --link-text: #ae00ff;
     --nav-link-hover: #7900b1;
     --nav-link-hover-05: #7900b180;
@@ -165,4 +200,9 @@ h1, h2, h3, h4, h5, h6, p {
     --theme-icon-light: 0;
     --bg-page: #3f3f3f80;
     --body-img: url('/assets/img/dark.jpg');
+    --grad1: #ae00ff;
+    --grad2: #00aeff;
+    --grad3: #ff00ae;
+    --grad4: #00aeff;
+    --grad5: #ae00ff;
 }
