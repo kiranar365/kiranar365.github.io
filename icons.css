@@ -1,0 +1,18 @@
+.icons {
+    display:inline-block;
+    font:normal normal normal 14px/1 FontAwesome;
+    font-size:inherit;text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+.dark-icon {
+    opacity: var(--theme-icon-dark);
+    position: absolute;
+}
+.light-icon {
+    opacity: var(--theme-icon-light);
+}
+.nav-icon::before {
+    content: url('/assets/svgs/bars.svg');
+    width: auto;
+}

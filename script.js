@@ -1,24 +1,30 @@
-const darkButton = document.getElementById('dark');
-const lightButton = document.getElementById('light');
-const body = document.body;
-
-
-// Apply the cached theme on reload
-
-const theme = localStorage.getItem('theme');
-
-if (theme) {
-  body.classList.add(theme);
+function navexpand() {
+    var navbtn = document.getElementById("navbar");
+    if (navbtn.className === "nav") {
+      navbtn.className += " responsive";
+    } else {
+      navbtn.className = "nav";
+    }
 }
 
-// Button Event Handlers
+const themeMap = {
+    dark: "light",
+    light: "dark"
+  };
+  
+const theme = localStorage.getItem('theme')
+  || (tmp = Object.keys(themeMap)[0],
+      localStorage.setItem('theme', tmp),
+      tmp);
+const bodyClass = document.body.classList;
+bodyClass.add(theme);
 
-darkButton.onclick = () => {
-  body.classList.replace('light', 'dark');
-  localStorage.setItem('theme', 'dark');
-};
+function toggleTheme() {
+    const current = localStorage.getItem('theme');
+    const next = themeMap[current];
+    
+    bodyClass.replace(current, next);
+    localStorage.setItem('theme', next);
+}
 
-lightButton.onclick = () => {
-  body.classList.replace('dark', 'light');
-  localStorage.setItem('theme', 'light');
-};
+document.getElementById('themeButton').onclick = toggleTheme;

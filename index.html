@@ -4,41 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiran A R's Homepage</title>
-    <link rel="shortcut icon" href="./Allay.webp">
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./icons.css" />
-    <link rel="stylesheet" href="./animations.css" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>Kiran A R's Github Page</title>
+    <link rel="stylesheet" href="./icons.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fa.css">
     <script src="./script.js" defer></script>
+    <script src="./fa.js" defer></script>
 </head>
 <body class="light">
-    <nav class="navbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="./index.html"> Home </a>
-            </li>
-            <li class="nav-item">About</li>
-            <li class="nav-item has-dropdown">
-                <a href="#">Theme</a>
-                <ul class="dropdown">
-                    <li class="dropdown-item">
-                        <a id="light">light</a>
-                    </li>
-                    <li class="dropdown-item">
-                        <a id="dark">dark</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">Source</li>
-        </ul>
+    <nav class="nav" id="navbar">
+        <a href="./index.html" class="active"><i class="fa fa-home"></i></a>
+        <a id="themeButton">
+            <i class="fa fa-sun dark-icon"></i>
+            <p class="resp-text">Theme</p>
+            <i class="fa fa-moon light-icon"></i>
+        </a>
+        <a href="http://github.com/kiranar365/kiranar365.github.io" target="_blank"><i class="fa fa-file-code"></i></a>
+        <a href="javascript:void(0);" onclick="navexpand()" class="icon">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
+    <br>
+    <div class="container">
+        <div class="page">
 
-    <header>
-        <img src="./Allay.webp" class="logo-color" />
-        <br>
-        <p class="anim-text">Hello</p>
-    </header>
-
+        </div>
+    </div>
 </body>
 </html>
